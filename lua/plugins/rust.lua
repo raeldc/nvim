@@ -21,17 +21,20 @@ return {
    			"lua-language-server", "stylua",
    			"html-lsp", "css-lsp" , "prettier"
    		},
-   	},
+    },
   },
-  { 'williamboman/mason-lspconfig.nvim'},
+  { 
+    'williamboman/mason-lspconfig.nvim',
+    after = "mason.nvim"
+  },
   { 'mfussenegger/nvim-dap'},
   {
     "nvim-treesitter/nvim-treesitter",
+    after = "mason.nvim",
     opts = {
       ensure_installed = {
         "vim", "lua", "vimdoc",
-        "html", "css", "pyright",
-        "tsserver", 
+        "html", "css",
       },
     },
   },

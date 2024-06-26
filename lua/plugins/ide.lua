@@ -9,13 +9,17 @@ return {
   },
   {
    "neovim/nvim-lspconfig",
+    after = "mason-lspconfig",
+    lazy = false,
     config = function()
        require("nvchad.configs.lspconfig").defaults()
        require "configs.lspconfig"
+       require "configs.ide"
      end,
-  }, 
+  },
   {
   "williamboman/mason.nvim",
+    lazy = false,
    	opts = {
    		ensure_installed = {
    			"lua-language-server", "stylua",
@@ -25,7 +29,13 @@ return {
   },
   { 
     'williamboman/mason-lspconfig.nvim',
-    after = "mason.nvim"
+    lazy = false,
+    after = "mason.nvim",
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = { "pyright", "eslint", "tsserver"}
+      })
+    end,
   },
   { 'mfussenegger/nvim-dap'},
   {

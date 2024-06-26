@@ -39,3 +39,8 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+vim.g.rustaceanvim = {
+  server = {
+    on_attach = on_attach
+  }
+}

@@ -37,3 +37,9 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+-- Set folding method to expression
+vim.opt.foldmethod = "expr"
+
+-- Define the folding expression
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"

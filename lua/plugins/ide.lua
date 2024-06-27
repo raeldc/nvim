@@ -27,7 +27,7 @@ return {
    		},
     },
   },
-  { 
+  {
     'williamboman/mason-lspconfig.nvim',
     lazy = false,
     after = "mason.nvim",

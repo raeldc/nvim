@@ -1,5 +1,7 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
 vim.g.mapleader = " "
+vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
@@ -39,7 +41,5 @@ vim.schedule(function()
 end)
 
 -- Set folding method to expression
-vim.opt.foldmethod = "expr"
-
--- Define the folding expression
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldmethod = "indent"
+vim.opt.foldenable = false
